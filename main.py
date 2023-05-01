@@ -16,15 +16,9 @@ df_olumsuz = pd.read_csv('olumsuz.csv')
 
 df = pd.concat([df_olumlu, df_olumsuz], ignore_index=True)
 
-
-
 # Öznitelikler ve hedef değişken ayrılır
 X = df['Yorum']
 y = df['Duygu']
-
-
-
-
 
 # Stop words tanımlanır
 def remove_stopwords(df):
@@ -41,9 +35,7 @@ def remove_stopwords(df):
         # Kaldırılmış kelime listesini yorum sütununun üzerine yazdık
         df.loc[i, 'Yorum'] = ' '.join(yorum_kelimeleri_no_stopwords)
 
-
 remove_stopwords(df)
-
 
 # Veri seti eğitim ve test setlerine ayrılır
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
