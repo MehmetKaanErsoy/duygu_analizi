@@ -21,9 +21,9 @@ from proje.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name= "index"),
+    path('index/', index, name= "index"),
     path('login/', login_html,name="login_html"),
-    path('api/login_api/', login,name="login"),
+    path('api/login_api/', login,name="login_api"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

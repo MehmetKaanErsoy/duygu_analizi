@@ -70,14 +70,17 @@
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
+						<div class = "login_auth">
+							<a  href="/login/" >Giriş Yap/Kayıt ol</a>
+						</div>
+						<li class="nav-item dropdown hidden-caret login-register">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
 								aria-expanded="false">
 								<div class="avatar-sm">
 									<img src="{%static 'images/profile.jpg' %}" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
-							<ul class="dropdown-menu dropdown-user animated fadeIn">
+							<ul class="dropdown-menu dropdown-user animated fadeIn ">
 								<div class="dropdown-user-scroll scrollbar-outer">
 									<li>
 										<div class="user-box">
@@ -92,11 +95,9 @@
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="login.html">My Profile</a>
+										
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="login.html">Account Setting</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="login.html">Logout</a>
+										<a class="dropdown-item logout"> Logout </a>
 									</li>
 								</div>
 							</ul>

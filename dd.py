@@ -6,4 +6,5 @@ data = {
     'password': 'mypassword'
 }
 response = requests.post(url, data=data)
+
 print(response.json())

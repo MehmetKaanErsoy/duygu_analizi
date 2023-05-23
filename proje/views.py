@@ -26,14 +26,21 @@ def login_html(request):
 @authentication_classes([])
 @permission_classes([])
 def login(request):
-    username = request.data.get('username')
-    password = request.data.get('password')
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        token, created = Token.objects.get_or_create(user=user)
-        return redirect('index')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password= request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            print(username,password)
+            token, created = Token.objects.get_or_create(user=user)
+            return JsonResponse({'token': str(token)}, status=200)
+            return redirect('index')
+        else:
+            print(username,password,"else")
+            return redirect('login_html')
     else:
-        return redirect('login_html')
+        print("post değil")
+        
 
 
 
