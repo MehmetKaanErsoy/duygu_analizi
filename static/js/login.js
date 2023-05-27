@@ -1,8 +1,4 @@
 const form = document.getElementById("login-form");
-if (isAuthenticated()) {
-  window.location.href = "/";
-}else{
-}
 form.addEventListener("submit", function(event) {
   event.preventDefault();
   const formData = new FormData(form);
@@ -12,24 +8,23 @@ form.addEventListener("submit", function(event) {
   console.log("Kullanıcı Adı:", usernameInput);
   console.log("Şifre:", passwordInput);
 
+  var formdata = new FormData();
+  formdata.append("username", usernameInput);
+  formdata.append("password", passwordInput);
+
   var requestOptions = {
     method: 'POST',
-    body: formData,
+    body: formdata,
     redirect: 'follow'
   };
 
   fetch("http://localhost:8000/api/login_api/", requestOptions)
-    .then(response => response.text())
-    .then(result => {console.log(result)
-      const token = result; // Token'ı JSON yanıttan al
-      localStorage.setItem("token", token);
-      window.location.href = "/index/";
+    .then(response => response.json())
+    .then(data => {
+      const redirectUrl = data.redirect_url;
+      if (redirectUrl) {
+        window.location.href = redirectUrl;
+      }
     })
     .catch(error => console.log('error', error));
 });
-function isAuthenticated() {
-  if (localStorage.getItem('token') != null) {
-      return true;
-  }
-  return false;
-}

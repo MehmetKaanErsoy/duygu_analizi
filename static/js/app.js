@@ -1,37 +1,20 @@
-
-
-function isAuthenticated() {
-	if (localStorage.getItem('token') != null) {
-
-		return true;
-
+function rotateNeedle(angle, duration) {
+	var needleElement = document.querySelector("#needleResponse .needle");
+	needleElement.style.transition = "transform " + duration + "s ease-in-out";
+	needleElement.style.transform = "rotate(" + angle + "deg)";
+  }
+  
+  function gelenDegeriGuncelle() {
+	var gelenDegerInput = document.querySelector("#gelenDegerInput");
+	var gelenDeger = parseFloat(gelenDegerInput.value);
+  
+	if (!isNaN(gelenDeger)) {
+	  rotateNeedle(gelenDeger, 5); // 5 saniyede dönme animasyonu
+	} else {
+	  alert("Geçerli bir sayı girmediniz!");
 	}
-
-	return false;
-}
-if (isAuthenticated()) {
-	document.querySelector(".login_auth").classList.add("d-none")
-}
-else{
-	document.querySelector(".login-register").classList.add("d-none")
-
-}
-
-window.addEventListener("load", () => {
-
-
-	if (isAuthenticated()) {
-
-		document.querySelector('.logout').addEventListener('click', (e) => {
-			e.preventDefault();
-			if (confirm("Are you sure you want to logout?") == true) {
-				localStorage.removeItem('token');
-				window.location.href = "/login/";
-			}
-		});
-	}
-
-});
+  }
+  
 "use strict";
 // Cicle Chart
 Circles.create({

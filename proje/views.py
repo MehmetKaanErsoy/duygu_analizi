@@ -10,6 +10,8 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from django.shortcuts import redirect
+from django.shortcuts import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -22,24 +24,25 @@ def login_html(request):
     return render(request, 'login.html', {})
 
 
+from django.http import HttpResponseRedirect
+
+from rest_framework.response import Response
+
 @api_view(['POST'])
-@authentication_classes([])
-@permission_classes([])
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        password= request.POST.get('password')
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            print(username,password)
-            token, created = Token.objects.get_or_create(user=user)
-            return JsonResponse({'token': str(token)}, status=200)
-            return redirect('index')
+            print(username, password)
+            return Response({'redirect_url': reverse('index')})
         else:
-            print(username,password,"else")
-            return redirect('login_html')
+            print(username, password, "else")
+            return Response({'redirect_url': reverse('login_html')})
     else:
         print("post değil")
+
         
 
 

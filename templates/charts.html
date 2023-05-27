@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Sentimentify</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="../assets/img/icon.ico" type="image/x-icon" />
 
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	
+
 	<link rel="stylesheet" href="../assets/css/fonts.min.css">
 </head>
 
 <body data-background-color="dark">
-	<div class="wrapper">
+	<div class="wrapper container-fluid">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="dark2">
@@ -40,260 +41,261 @@
 			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="dark">
 				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
+					<div style="float:none; width:auto; flex-direction:column; " class="logo-header"
+						data-background-color="dark2">
+
+						<a href="/index/" class="logo">
+							<img src="{%static 'images/logo.png' %}" alt="navbar brand" class="navbar-brand">
+						</a>
+
+
 					</div>
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button"
-								aria-expanded="false" aria-controls="search-nav">
-								<i class="fa fa-search"></i>
-							</a>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
-								aria-expanded="false">
-								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-								</div>
-							</a>
-							<ul class="dropdown-menu dropdown-user animated fadeIn">
-								<div class="dropdown-user-scroll scrollbar-outer">
-									<li>
-										<div class="user-box">
-											<div class="avatar-lg"><img src="../assets/img/profile.jpg"
-													alt="image profile" class="avatar-img rounded"></div>
-											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p><a href="profile.html"
-													class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-											</div>
+				</div>
+				<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+					<li class="nav-item toggle-nav-search hidden-caret">
+						<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button"
+							aria-expanded="false" aria-controls="search-nav">
+							<i class="fa fa-search"></i>
+						</a>
+					</li>
+					<div class="login_auth">
+						<a href="/login/">Giriş Yap/Kayıt ol</a>
+					</div>
+					<li class="nav-item dropdown hidden-caret login-register">
+						<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+							<div class="avatar-sm">
+								<img src="{%static 'images/profile.jpg' %}" alt="..."
+									class="avatar-img rounded-circle" />
+							</div>
+						</a>
+						<ul class="dropdown-menu dropdown-user animated fadeIn">
+							<div class="dropdown-user-scroll scrollbar-outer">
+								<li>
+									<div class="user-box">
+										<div class="avatar-lg">
+											<img src="{%static 'images/profile.jpg' %}" alt="image profile"
+												class="avatar-img rounded" />
 										</div>
-									</li>
-									<li>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">My Profile</a>
-										<a class="dropdown-item" href="#">My Balance</a>
-										<a class="dropdown-item" href="#">Inbox</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Account Setting</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
-									</li>
-								</div>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- End Navbar -->
-		</div>
+										<div class="u-text">
+											<h4>Hizrian</h4>
+											<p class="text-muted">mail adress</p>
+											<a href="profile.html" class="btn btn-xs btn-secondary btn-sm">
+												View Profile
+											</a>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="dropdown-divider"></div>
 
-		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2" data-background-color="dark2">
-			<div class="sidebar-wrapper scrollbar scrollbar-inner">
-				<div class="sidebar-content">
-					<div class="user">
-						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-						</div>
-						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
-									<span class="caret"></span>
-								</span>
-							</a>
-							<div class="clearfix"></div>
-
-							<div class="collapse in" id="collapseExample">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
-								</ul>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item logout">Logout</a>
+								</li>
 							</div>
-						</div>
-					</div>
-					<ul class="nav nav-primary">
+						</ul>
+					</li>
+				</ul>
+		</div>
+		</nav>
+		<!-- End Navbar -->
+	</div>
 
-						<li class="nav-section">
-							<span class="sidebar-mini-icon">
-								<i class="fa fa-ellipsis-h"></i>
-							</span>
-							<h4 class="text-section">Components</h4>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#charts">
-								<i class="far fa-chart-bar"></i>
-								<p>Charts</p>
+	<!-- Sidebar -->
+	<div class="sidebar sidebar-style-2" data-background-color="dark2">
+		<div class="sidebar-wrapper scrollbar scrollbar-inner">
+			<div class="sidebar-content">
+				<div class="user">
+					<div class="avatar-sm float-left mr-2">
+						<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+					</div>
+					<div class="info">
+						<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<span>
+								Hizrian
+								<span class="user-level">Administrator</span>
 								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="charts">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="charts.html">
-											<span class="sub-item">Chart Js</span>
-										</a>
-									</li>
+							</span>
+						</a>
+						<div class="clearfix"></div>
 
-								</ul>
-							</div>
-						</li>
-					</ul>
+						<div class="collapse in" id="collapseExample">
+							<ul class="nav">
+								<li>
+									<a href="#profile">
+										<span class="link-collapse">My Profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="#edit">
+										<span class="link-collapse">Edit Profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="#settings">
+										<span class="link-collapse">Settings</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
+				<ul class="nav nav-primary">
+
+					<li class="nav-section">
+						<span class="sidebar-mini-icon">
+							<i class="fa fa-ellipsis-h"></i>
+						</span>
+						<h4 class="text-section">Components</h4>
+					</li>
+					<li class="nav-item">
+						<a data-toggle="collapse" href="#charts">
+							<i class="far fa-chart-bar"></i>
+							<p>Charts</p>
+							<span class="caret"></span>
+						</a>
+						<div class="collapse" id="charts">
+							<ul class="nav nav-collapse">
+								<li>
+									<a href="charts.html">
+										<span class="sub-item">Chart Js</span>
+									</a>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<!-- End Sidebar -->
-		<div class="main-panel">
-			<div class="content">
-				<div class="page-inner">
-					<h4 class="page-title">Chart.js</h4>
-					<div class="page-category">Simple yet flexible JavaScript charting for designers & developers.
-						Please checkout their <a href="https://www.chartjs.org/" target="_blank">full documentation</a>.
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Line Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="lineChart"></canvas>
-									</div>
-								</div>
+	</div>
+	<!-- End Sidebar -->
+	<div class="main-panel">
+		<div class="content">
+			<div class="page-inner">
+				<h4 class="page-title">Chart.js</h4>
+				<div class="page-category">Simple yet flexible JavaScript charting for designers & developers.
+					Please checkout their <a href="https://www.chartjs.org/" target="_blank">full documentation</a>.
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Line Chart</div>
 							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Bar Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="barChart"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Pie Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="pieChart" style="width: 50%; height: 50%"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Doughnut Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="doughnutChart" style="width: 50%; height: 50%"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Radar Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="radarChart"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Bubble Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="bubbleChart"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Multiple Line Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="multipleLineChart"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Multiple Bar Chart</div>
-								</div>
-								<div class="card-body">
-									<div class="chart-container">
-										<canvas id="multipleBarChart"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title">Chart with HTML Legends</div>
-								</div>
-								<div class="card-body">
-									<div class="card-sub">
-										Sometimes you need a very complex legend. In these cases, it makes sense to
-										generate an HTML legend. Charts provide a generateLegend() method on their
-										prototype that returns an HTML string for the legend.
-									</div>
-									<div class="chart-container">
-										<canvas id="htmlLegendsChart"></canvas>
-									</div>
-									<div id="myChartLegend"></div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="lineChart"></canvas>
 								</div>
 							</div>
 						</div>
 					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Bar Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="barChart"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Pie Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="pieChart" style="width: 50%; height: 50%"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Doughnut Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="doughnutChart" style="width: 50%; height: 50%"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Radar Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="radarChart"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Bubble Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="bubbleChart"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Multiple Line Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="multipleLineChart"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Multiple Bar Chart</div>
+							</div>
+							<div class="card-body">
+								<div class="chart-container">
+									<canvas id="multipleBarChart"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="card-title">Chart with HTML Legends</div>
+							</div>
+							<div class="card-body">
+								<div class="card-sub">
+									Sometimes you need a very complex legend. In these cases, it makes sense to
+									generate an HTML legend. Charts provide a generateLegend() method on their
+									prototype that returns an HTML string for the legend.
+								</div>
+								<div class="chart-container">
+									<canvas id="htmlLegendsChart"></canvas>
+								</div>
+								<div id="myChartLegend"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-
 		</div>
+
+	</div>
 
 
 	</div>
@@ -361,7 +363,12 @@
 					caretPadding: 10
 				},
 				layout: {
-					padding: { left: 15, right: 15, top: 15, bottom: 15 }
+					padding: {
+						left: 15,
+						right: 15,
+						top: 15,
+						bottom: 15
+					}
 				}
 			}
 		});
@@ -480,8 +487,7 @@
 					pointHoverRadius: 4,
 					pointRadius: 3,
 					label: 'Team 2'
-				},
-				]
+				}, ]
 			},
 			options: {
 				responsive: true,
@@ -496,15 +502,40 @@
 			type: 'bubble',
 			data: {
 				datasets: [{
-					label: "Car",
-					data: [{ x: 25, y: 17, r: 25 }, { x: 30, y: 25, r: 28 }, { x: 35, y: 30, r: 8 }],
-					backgroundColor: "#716aca"
-				},
-				{
-					label: "Motorcycles",
-					data: [{ x: 10, y: 17, r: 20 }, { x: 30, y: 10, r: 7 }, { x: 35, y: 20, r: 10 }],
-					backgroundColor: "#1d7af3"
-				}],
+						label: "Car",
+						data: [{
+							x: 25,
+							y: 17,
+							r: 25
+						}, {
+							x: 30,
+							y: 25,
+							r: 28
+						}, {
+							x: 35,
+							y: 30,
+							r: 8
+						}],
+						backgroundColor: "#716aca"
+					},
+					{
+						label: "Motorcycles",
+						data: [{
+							x: 10,
+							y: 17,
+							r: 20
+						}, {
+							x: 30,
+							y: 10,
+							r: 7
+						}, {
+							x: 35,
+							y: 20,
+							r: 10
+						}],
+						backgroundColor: "#1d7af3"
+					}
+				],
 			},
 			options: {
 				responsive: true,
@@ -588,7 +619,12 @@
 					caretPadding: 10
 				},
 				layout: {
-					padding: { left: 15, right: 15, top: 15, bottom: 15 }
+					padding: {
+						left: 15,
+						right: 15,
+						top: 15,
+						bottom: 15
+					}
 				}
 			}
 		});
@@ -718,7 +754,12 @@
 					caretPadding: 10
 				},
 				layout: {
-					padding: { left: 15, right: 15, top: 15, bottom: 15 }
+					padding: {
+						left: 15,
+						right: 15,
+						top: 15,
+						bottom: 15
+					}
 				},
 				scales: {
 					yAxes: [{
@@ -749,7 +790,8 @@
 					var text = [];
 					text.push('<ul class="' + chart.id + '-legend html-legend">');
 					for (var i = 0; i < chart.data.datasets.length; i++) {
-						text.push('<li><span style="background-color:' + chart.data.datasets[i].legendColor + '"></span>');
+						text.push('<li><span style="background-color:' + chart.data.datasets[i].legendColor +
+							'"></span>');
 						if (chart.data.datasets[i].label) {
 							text.push(chart.data.datasets[i].label);
 						}
@@ -771,7 +813,6 @@
 		for (var i = 0; i < legendItems.length; i += 1) {
 			legendItems[i].addEventListener("click", legendClickCallback, false);
 		}
-
 	</script>
 
 
