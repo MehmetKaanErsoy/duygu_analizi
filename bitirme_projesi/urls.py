@@ -22,8 +22,9 @@ from proje.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', index, name= "index"),
-    path('login/', login_html,name="login_html"),
-    path('api/login_api/', login,name="login_api"),
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('login/', login_html, name='login'),  
+    path('api/login_api/', login_api,name="login_api"),
+    path('api/logout/', logout_view, name='logout'),
+    path('', main_page, name="main_page"),
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

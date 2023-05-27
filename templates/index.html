@@ -15,7 +15,31 @@
 
   <link rel="stylesheet" href="/static/css/main.css" />
   <!-- Fonts and icons -->
+  <script>
+    $(document).ready(function() {
+        $('#logout-button').click(function() {
+            $.ajax({
+                type: 'GET',
+                url: '/api/logout/',
+                success: function(response) {
+                    alert(response.message);
+                    // İsteğin başarılı olması durumunda istediğiniz işlemleri gerçekleştirebilirsiniz.
+                },
+                error: function(xhr, status, error) {
+                    alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+                }
+            });
+        });
+    });
+</script>
 </head>
+
+{% if request.user.is_authenticated %}
+  <p>Hoş geldin, {{ request.user.username }}!</p>
+{% else %}
+  <p>Giriş yapmadınız.</p>
+{% endif %}
+
 
 <body data-background-color="dark">
   <div class="wrapper">
@@ -32,7 +56,7 @@
                 <div class="avatar-sm">
                   <img src="{%static 'images/profile.jpg' %}" alt="..." class="avatar-img rounded-circle" />
                 </div>
-                <span class="name mt-3">Eleanor Pena</span> <span class="idd">@eleanorpena</span>
+                <span class="name mt-3">{{ request.user.username }}</span> <span class="idd"></span>
 
 
                 <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div>
@@ -79,17 +103,12 @@
                 <img src="{%static 'images/profile.jpg' %}" alt="..." class="avatar-img rounded-circle" />
               </div>
             </a> {% endcomment %}
-            <div class="login_auth">
-              <a href="/login/">Giriş Yap
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                  class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
-                  <path fill-rule="evenodd"
-                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                </svg>
-              </a>
-            </div>
+            <a href="{% url 'logout' %}" class="cikis nav-link"
+                       style="background-color: #ff0000; margin-top: 25px">
+                        <i class="fas fa-door-open"></i>
+                        <p class="bayiyonetimi" style="margin-left: 10px ">
+                            Çıkış Yap </p>
+                    </a>
           </li>
         </ul>
 
