@@ -26,5 +26,6 @@ urlpatterns = [
     path('api/login_api/', login_api,name="login_api"),
     path('api/logout/', logout_view, name='logout'),
     path('', main_page, name="main_page"),
+    path('profile/', profile, name="profile"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

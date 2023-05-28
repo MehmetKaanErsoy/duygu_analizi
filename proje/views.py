@@ -25,7 +25,8 @@ def index(request):
 def login_html(request):
     return render(request, 'login.html', {})
 
-
+def profile(request):
+    return render(request, 'profile.html', {})
 
 
 def main_page(request):
